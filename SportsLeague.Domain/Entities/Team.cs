@@ -19,5 +19,6 @@
 
         public ICollection<Player> Players { get; set; } = new List<Player>();
 
+        public ICollection<TournamentTeam> TournamentTeams { get; set; } = new List<TournamentTeam>();
     }
 }
