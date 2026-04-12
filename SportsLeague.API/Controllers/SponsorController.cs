@@ -20,7 +20,7 @@ namespace SportsLeague.API.Controllers
             _mapper = mapper;
         }
 
-        // 🔹 GET ALL
+        //  GET ALL
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -28,7 +28,7 @@ namespace SportsLeague.API.Controllers
             return Ok(_mapper.Map<IEnumerable<SponsorResponseDTO>>(data));
         }
 
-        // 🔹 GET BY ID
+        //  GET BY ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -40,7 +40,7 @@ namespace SportsLeague.API.Controllers
             return Ok(_mapper.Map<SponsorResponseDTO>(entity));
         }
 
-        // 🔹 CREATE
+        //  CREATE
         [HttpPost]
         public async Task<IActionResult> Create(SponsorRequestDTO dto)
         {
@@ -57,7 +57,7 @@ namespace SportsLeague.API.Controllers
             }
         }
 
-        // 🔹 UPDATE
+        //  UPDATE
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, SponsorRequestDTO dto)
         {
@@ -74,7 +74,7 @@ namespace SportsLeague.API.Controllers
             }
         }
 
-        // 🔹 DELETE
+        //  DELETE
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
@@ -89,7 +89,7 @@ namespace SportsLeague.API.Controllers
             }
         }
 
-        // 🔥 LINK SPONSOR TO TOURNAMENT
+        //  LINK SPONSOR TO TOURNAMENT
         [HttpPost("{id}/tournaments")]
         public async Task<IActionResult> Link(int id, TournamentSponsorRequestDTO dto)
         {
@@ -104,7 +104,7 @@ namespace SportsLeague.API.Controllers
             }
         }
 
-        // 🔹 GET TOURNAMENTS BY SPONSOR
+        //  GET TOURNAMENTS BY SPONSOR
         [HttpGet("{id}/tournaments")]
         public async Task<IActionResult> GetTournaments(int id)
         {
@@ -112,7 +112,7 @@ namespace SportsLeague.API.Controllers
             return Ok(_mapper.Map<IEnumerable<TournamentSponsorResponseDTO>>(data));
         }
 
-        // 🔹 REMOVE LINK
+        //  REMOVE LINK
         [HttpDelete("{id}/tournaments/{tournamentId}")]
         public async Task<IActionResult> Remove(int id, int tournamentId)
         {
