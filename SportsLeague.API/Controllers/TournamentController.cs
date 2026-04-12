@@ -33,8 +33,10 @@ namespace SportsLeague.API.Controllers
         public async Task<ActionResult<TournamentResponseDTO>> GetById(int id)
         {
             var tournament = await _tournamentService.GetByIdAsync(id);
+
             if (tournament == null)
                 return NotFound(new { message = $"Torneo con ID {id} no encontrado" });
+
             return Ok(_mapper.Map<TournamentResponseDTO>(tournament));
         }
 
@@ -46,6 +48,7 @@ namespace SportsLeague.API.Controllers
                 var tournament = _mapper.Map<Tournament>(dto);
                 var created = await _tournamentService.CreateAsync(tournament);
                 var responseDto = _mapper.Map<TournamentResponseDTO>(created);
+
                 return CreatedAtAction(nameof(GetById), new { id = responseDto.Id }, responseDto);
             }
             catch (InvalidOperationException ex)

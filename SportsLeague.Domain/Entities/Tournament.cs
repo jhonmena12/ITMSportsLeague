@@ -1,7 +1,4 @@
 ﻿using SportsLeague.Domain.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace SportsLeague.Domain.Entities
 {
@@ -23,6 +20,6 @@ namespace SportsLeague.Domain.Entities
         // Navigation Properties
 
         public ICollection<TournamentTeam> TournamentTeams { get; set; } = new List<TournamentTeam>();
-
+        public virtual ICollection<TournamentSponsor> TournamentSponsors { get; set; } = new List<TournamentSponsor>();
     }
 }
