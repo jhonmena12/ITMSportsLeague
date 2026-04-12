@@ -26,7 +26,7 @@ public class SponsorService : ISponsorService
 
     public async Task<Sponsor> CreateAsync(Sponsor sponsor)
     {
-        // 🔥 VALIDACIONES (MUY IMPORTANTES)
+        //  VALIDACIONES (MUY IMPORTANTES)
         if (await _repo.ExistsByNameAsync(sponsor.Name))
             throw new InvalidOperationException("El nombre ya existe");
 
