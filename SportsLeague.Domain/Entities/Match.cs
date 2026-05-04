@@ -1,0 +1,43 @@
+﻿using SportsLeague.Domain.Enums;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SportsLeague.Domain.Entities
+{
+    public class Match : AuditBase
+
+    {
+
+        public int TournamentId { get; set; }
+
+        public int HomeTeamId { get; set; }
+
+        public int AwayTeamId { get; set; }
+
+        public int RefereeId { get; set; }
+
+        public DateTime MatchDate { get; set; }
+
+        public string Venue { get; set; } = string.Empty; // sede 
+
+        public int Matchday { get; set; } // fecha dentro de la propgrama del torneo
+
+        public MatchStatus Status { get; set; } = MatchStatus.Scheduled;
+
+
+
+        // Navigation Properties 
+
+        public Tournament Tournament { get; set; } = null!;
+
+        public Team HomeTeam { get; set; } = null!;
+
+        public Team AwayTeam { get; set; } = null!;
+
+        public Referee Referee { get; set; } = null!;
+
+    }
+
+
+}
