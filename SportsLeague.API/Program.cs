@@ -50,6 +50,7 @@ builder.Services.AddScoped<IMatchService, MatchService>();
 builder.Services.AddScoped<IMatchEventService, MatchEventService>();   // NUEVO f5
 builder.Services.AddScoped<MatchValidationHelper>();                  // NUEVO f5
 
+builder.Services.AddScoped<IStandingsService, StandingsService>(); // NUEVO f6
 // ── AutoMapper ──
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
