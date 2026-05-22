@@ -38,6 +38,9 @@ builder.Services.AddScoped<IMatchResultRepository, MatchResultRepository>();  //
 builder.Services.AddScoped<IGoalRepository, GoalRepository>();                // NUEVO f5
 builder.Services.AddScoped<ICardRepository, CardRepository>();                // NUEVO f5
 
+builder.Services.AddScoped<IMatchLineupRepository, MatchLineupRepository>(); // NUEVO IMatchLineupRepository + MatchLineupService 
+
+
 // ── Services ──
 
 builder.Services.AddScoped<ITeamService, TeamService>();
@@ -51,6 +54,9 @@ builder.Services.AddScoped<IMatchEventService, MatchEventService>();   // NUEVO 
 builder.Services.AddScoped<MatchValidationHelper>();                  // NUEVO f5
 
 builder.Services.AddScoped<IStandingsService, StandingsService>(); // NUEVO f6
+
+builder.Services.AddScoped<IMatchLineupService, MatchLineupService>();       // NUEVO IMatchLineupService + MatchLineupRepository
+
 // ── AutoMapper ──
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
